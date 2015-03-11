@@ -1,0 +1,17 @@
+D:\36\Project_C#\Digits\Digits\bin\Debug\Digits.exe
+D:\36\Project_C#\Digits\Digits\bin\Debug\Digits.pdb
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\Digits.Form1.resources
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\Digits.Properties.Resources.resources
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\Digits.exe
+D:\36\Project_C#\Digits\Digits\obj\x86\Debug\Digits.pdb
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.exe
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.pdb
+D:\36\ATLAS\Game\Digits\Digits\bin\Debug\Digits.exe
+D:\36\ATLAS\Game\Digits\Digits\bin\Debug\Digits.pdb
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.Form1.resources
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.Properties.Resources.resources
+D:\36\ATLAS\Game\Digits\Digits\obj\x86\Debug\Digits.csproj.GenerateResource.Cache

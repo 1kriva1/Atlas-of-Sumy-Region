@@ -1,0 +1,9 @@
+D:\36\Project_C#\FlyFighter\FlyFighter\bin\Debug\FlyFighter.exe
+D:\36\Project_C#\FlyFighter\FlyFighter\bin\Debug\FlyFighter.pdb
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\FlyFighter.Form1.resources
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\FlyFighter.Properties.Resources.resources
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\FlyFighter.exe
+D:\36\Project_C#\FlyFighter\FlyFighter\obj\x86\Debug\FlyFighter.pdb

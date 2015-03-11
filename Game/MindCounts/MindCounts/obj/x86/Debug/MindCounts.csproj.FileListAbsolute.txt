@@ -1,0 +1,17 @@
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\MindCounts.FormMindCounter.resources
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\MindCounts.Properties.Resources.resources
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\Project_C#\MindCounts\MindCounts\bin\Debug\MindCounts.exe
+D:\36\Project_C#\MindCounts\MindCounts\bin\Debug\MindCounts.pdb
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\MindCounts.exe
+D:\36\Project_C#\MindCounts\MindCounts\obj\x86\Debug\MindCounts.pdb
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.exe
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.pdb
+D:\36\ATLAS\Game\MindCounts\MindCounts\bin\Debug\MindCounts.exe
+D:\36\ATLAS\Game\MindCounts\MindCounts\bin\Debug\MindCounts.pdb
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.FormMindCounter.resources
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.Properties.Resources.resources
+D:\36\ATLAS\Game\MindCounts\MindCounts\obj\x86\Debug\MindCounts.csproj.GenerateResource.Cache

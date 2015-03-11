@@ -1,0 +1,17 @@
+D:\36\Project_C#\OX\OX\obj\x86\Debug\OX.exe
+D:\36\Project_C#\OX\OX\obj\x86\Debug\OX.pdb
+D:\36\Project_C#\OX\OX\bin\Debug\OX.exe
+D:\36\Project_C#\OX\OX\bin\Debug\OX.pdb
+D:\36\Project_C#\OX\OX\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\OX\OX\obj\x86\Debug\OX.Form1.resources
+D:\36\Project_C#\OX\OX\obj\x86\Debug\OX.Properties.Resources.resources
+D:\36\Project_C#\OX\OX\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\OX\OX\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.exe
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.pdb
+D:\36\ATLAS\Game\OX\OX\bin\Debug\OX.exe
+D:\36\ATLAS\Game\OX\OX\bin\Debug\OX.pdb
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.Form1.resources
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.Properties.Resources.resources
+D:\36\ATLAS\Game\OX\OX\obj\x86\Debug\OX.csproj.GenerateResource.Cache

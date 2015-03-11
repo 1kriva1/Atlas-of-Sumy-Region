@@ -1,0 +1,17 @@
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\Viselka.FormViselka.resources
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\Viselka.Properties.Resources.resources
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\Project_C#\Viselka\Viselka\bin\Debug\Viselka.exe
+D:\36\Project_C#\Viselka\Viselka\bin\Debug\Viselka.pdb
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\Viselka.exe
+D:\36\Project_C#\Viselka\Viselka\obj\x86\Debug\Viselka.pdb
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.exe
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.pdb
+D:\36\ATLAS\Game\Viselka\Viselka\bin\Debug\Viselka.exe
+D:\36\ATLAS\Game\Viselka\Viselka\bin\Debug\Viselka.pdb
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.FormViselka.resources
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.Properties.Resources.resources
+D:\36\ATLAS\Game\Viselka\Viselka\obj\x86\Debug\Viselka.csproj.GenerateResource.Cache

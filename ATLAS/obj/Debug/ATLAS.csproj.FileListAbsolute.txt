@@ -1,0 +1,16 @@
+D:\36\ATLAS\ATLAS\bin\Debug\ATLAS.exe.config
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.exe
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.pdb
+D:\36\ATLAS\ATLAS\bin\Debug\ATLAS.exe
+D:\36\ATLAS\ATLAS\bin\Debug\ATLAS.pdb
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.AtlasAbout.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.Concistadore.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.CounterTaskList.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.MapLegend.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.Properties.Resources.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.Quizzes.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.ScreenShotsViewer.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.csproj.GenerateResource.Cache
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.Atlas_Main.resources
+D:\36\ATLAS\ATLAS\obj\Debug\ATLAS.CountourMapTask.resources

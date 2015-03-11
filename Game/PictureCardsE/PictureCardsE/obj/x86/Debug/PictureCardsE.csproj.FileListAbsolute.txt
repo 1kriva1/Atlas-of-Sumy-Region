@@ -1,0 +1,16 @@
+D:\36\Project_C#\PictureCardsE\PictureCardsE\bin\Debug\PictureCardsE.exe
+D:\36\Project_C#\PictureCardsE\PictureCardsE\bin\Debug\PictureCardsE.pdb
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.Form1.resources
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.Properties.Resources.resources
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.exe
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.pdb
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.csprojResolveAssemblyReference.cache
+D:\36\Project_C#\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.csproj.GenerateResource.Cache
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.exe
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.pdb
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\bin\Debug\PictureCardsE.exe
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\bin\Debug\PictureCardsE.pdb
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.Form1.resources
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.Properties.Resources.resources
+D:\36\ATLAS\Game\PictureCardsE\PictureCardsE\obj\x86\Debug\PictureCardsE.csproj.GenerateResource.Cache

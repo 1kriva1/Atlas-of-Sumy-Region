@@ -1,0 +1,26 @@
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\bin\Debug\Arcanoid.exe
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\bin\Debug\Arcanoid.pdb
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Form1.resources
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Properties.Resources.resources
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.exe
+D:\36\and\Visual Studio 2010\Projects\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.pdb
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.exe
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.pdb
+D:\36\Project_C#\Arcanoid\Arcanoid\bin\Debug\Arcanoid.exe
+D:\36\Project_C#\Arcanoid\Arcanoid\bin\Debug\Arcanoid.pdb
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Form1.resources
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Properties.Resources.resources
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\36\Project_C#\Arcanoid\Arcanoid\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.exe
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.pdb
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\bin\Debug\Arcanoid.exe
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\bin\Debug\Arcanoid.pdb
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.csprojResolveAssemblyReference.cache
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Form1.resources
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.Properties.Resources.resources
+D:\36\ATLAS\Game\Arcanoid\Arcanoid\obj\x86\Debug\Arcanoid.csproj.GenerateResource.Cache
