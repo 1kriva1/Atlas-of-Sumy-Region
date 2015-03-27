@@ -16,6 +16,7 @@ The structure of the atlas is:
 
 	1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account). 
 Functions: 
+
 •	The possibility of registration profile 
 •	Sign in (login) 
 •	The ability to edit profile 
