@@ -55,6 +55,7 @@
             this.Name = "MapLegend";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Легенда карти";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MapLegend_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MapLegend)).EndInit();
             this.ResumeLayout(false);
 

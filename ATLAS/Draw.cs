@@ -47,8 +47,7 @@ namespace ATLAS
         public void DrawRectangleFill(Bitmap bmp, SolidBrush brush, int x1, int y1, int x2, int y2)
         {
             temp = (Bitmap)bmp.Clone();
-            pictureBox_map.Image = temp;
-            
+            pictureBox_map.Image = temp;            
             using (Graphics g = Graphics.FromImage(temp))
             {
                 if (x1 > x2 && y1 > y2)
@@ -67,8 +66,7 @@ namespace ATLAS
         public void DrawLine(Bitmap bmp, Pen pen, int x1, int y1, int x2, int y2)
         {
             temp = (Bitmap)bmp.Clone();
-            pictureBox_map.Image = temp;
-            
+            pictureBox_map.Image = temp;            
             using (Graphics g = Graphics.FromImage(temp))
             {
                 g.DrawLine(pen, x1, y1, x2, y2);
@@ -99,8 +97,7 @@ namespace ATLAS
          public void DrawElipseFill(Bitmap bmp, SolidBrush brush, int x1, int y1, int x2, int y2)
         {
             temp = (Bitmap)bmp.Clone();            
-            pictureBox_map.Image = temp;
-            
+            pictureBox_map.Image = temp;            
             using (g = Graphics.FromImage(temp))
             {
                 if (x1 > x2 && y1 > y2)
@@ -163,8 +160,7 @@ namespace ATLAS
             g.DrawString(((RichTextBox)sender).Text, fontDialog.Font, Brushes.Black, ((RichTextBox)sender).Location);
             ((RichTextBox)sender).Leave -= new EventHandler(txt_Leave);
             pictureBox_map.Controls.Remove((RichTextBox)sender);
-            ((RichTextBox)sender).Dispose();
-            ((RichTextBox)sender).Visible = false;
+            ((RichTextBox)sender).Dispose();            
             pictureBox_map.Refresh();
             txt = null;            
         }

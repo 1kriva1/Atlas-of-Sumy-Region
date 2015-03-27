@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ATLAS
 {
@@ -20,26 +14,35 @@ namespace ATLAS
           territory - quizzess will be only about this territory; 
           thema - quizzess will be only about this thema 
         */
-        public static string type, territory, thema; 
-        string connector;
-        string answer; // right answer         
-        SQL sql;
-        ControlController cc;        
+        string type { get; set; }
+        string territory { get; set; }
+        string thema { get; set; }
+        string connector { get; set; } // connection string for sql.Open
+        string fullPath { get; set; } // path to database
+        string answer { get; set; } // right answer
+
+        int RightAnswerCount { get; set; } // count right answers
         List<string> questions = new List<string>();
         List<string> answers = new List<string>();
         List<string> rightAnswer = new List<string>();
         List<string> pictures = new List<string>();
         string[] AnswerArray; // answers for concrete question
-        Random rnd;  // for choose random question 
-        int RightAnswerCount;
-        String fullPath; // path to database
+
+        Control[] quizzesAnswer; // array for answers in quizzes
+        Control[] fotoAnswer; // array for answers in fotoquizzes
+
+        Random rnd;  // for choose random question                 
+        SQL sql;
+        ControlController cc; 
 
         public Quizzes()
-        {
-            fullPath = Application.StartupPath.ToString() + @"\QuizzesData";
+        {            
             InitializeComponent();
-            Init();
+            fullPath = Application.StartupPath.ToString() + @"\QuizzesData";            
             RightAnswerCount = 0;
+            quizzesAnswer = new Control [] { label_answer_1, label_answer_2, label_answer_3, label_answer_4 };
+            fotoAnswer = new Control[] { label_photo_answ1, label_photo_answ2, label_photo_answ3, label_photo_answ4 };
+            Init();
             rnd = new Random();
             cc = new ControlController();            
         }
@@ -143,22 +146,22 @@ namespace ATLAS
                    pictureBox_territory_sep, pictureBox_mode_all, pictureBox_mode_sep, comboBox_mode);
             cc.EnableOn(pictureBox_type_quizzes, pictureBox_type_foto);
             if (type == "Питання")
-                connector = @"Data Source=(LocalDB)\v11.0;AttachDbFilename="+fullPath+@"\Quizzes.mdf;Integrated Security=True;";
-            else
-                connector = @"Data Source=(LocalDB)\v11.0;AttachDbFilename="+fullPath+@"\Photo.mdf;Integrated Security=True;";
-            sql = new SQL(connector);                      
-            if (type == "Питання")
             {
+                connector = "provider=Microsoft.ACE.OLEDB.12.0;data source=" + fullPath+ @"\Quizzes.accdb";
+                sql = new SQL(connector);
                 cc.VisibleChange(label_question, label_answer_1, label_answer_2, label_answer_3, label_answer_4,
-               label_result, button_next, button_finish);
-               LoadQuizzesData();
+                label_result, button_next, button_finish);
+                LoadQuizzesData();
             }                
             else
             {
+                connector = "provider=Microsoft.ACE.OLEDB.12.0;data source=" + fullPath + @"\Photo.accdb";
+                sql = new SQL(connector);
                 cc.VisibleChange(pictureBox_photo, label_photo_answ1, label_photo_answ2, label_photo_answ3, label_photo_answ4,
-                    label_photo_result,button_next,button_finish,label_question);
+                    label_photo_result, button_next, button_finish, label_question);
                 LoadPicturesData();
-            }                          
+            }                
+                                                                      
         }
         #endregion
 
@@ -167,10 +170,7 @@ namespace ATLAS
         // Load all questions and answers from data base for quizzes
         private void LoadQuizzesData()
         {
-            do
-            {
-                sql.Open();
-            }
+            do sql.Open();                               
             while (sql.db_error());
             string query;
             if (thema == "Всі теми" && territory != "Вся область")
@@ -181,25 +181,21 @@ namespace ATLAS
                 query = "SELECT Question, Answers, RightAnswer FROM Quizzes";
             else
                 query = "SELECT Question, Answers,RightAnswer FROM Quizzes WHERE Location = '" + territory + "'" + " AND Thema = '" + thema + "'";
-            SqlDataReader read;
-            do
-            {
-                read = sql.Select(query);
-            }
+            OleDbDataReader read;
+            do read = sql.Select(query);                           
             while (sql.db_error());
+
             questions.Clear();
             answers.Clear();
             rightAnswer.Clear();
+
             while (read.Read())
             {
                 questions.Add(read["Question"].ToString());
                 answers.Add(read["Answers"].ToString());
                 rightAnswer.Add(read["RightAnswer"].ToString());
             }
-            do 
-            {
-                sql.Close();
-            }
+            do sql.Close();           
             while (sql.db_error());
             LoadQuestion();
         }
@@ -207,26 +203,22 @@ namespace ATLAS
         // Load all questions, answers, pictures from data base for foto-quizzes 
         private void LoadPicturesData()
         {
-            do
-            {
-                sql.Open();
-            }
+            do sql.Open();
             while (sql.db_error());
             string query;
             if (territory == "Вся область")
                 query = "SELECT Question, Answer, RightAnswer, Picture_1 FROM Pictures";
             else
                 query = "SELECT Question, Answer, RightAnswer, Picture_1 FROM Pictures WHERE Location = '" + territory + "'";
-            SqlDataReader read;
-            do 
-            {
-                read = sql.Select(query);
-            }
+            OleDbDataReader read;
+            do read = sql.Select(query);
             while (sql.db_error());
+
             questions.Clear();
             answers.Clear();
             rightAnswer.Clear();
             pictures.Clear();
+
             while (read.Read())
             {
                 questions.Add(read["Question"].ToString());
@@ -234,26 +226,22 @@ namespace ATLAS
                 rightAnswer.Add(read["RightAnswer"].ToString());
                 pictures.Add(read["Picture_1"].ToString());
             }
-            do
-            {
-                sql.Close();
-            }
+            do sql.Close();
             while (sql.db_error());
             LoadPicture();
         }
        
         private bool UpdateBonus()
         {
-            connector = @"Data Source=(LocalDB)\v11.0;AttachDbFilename="+fullPath+@"\AtlasUsers.mdf;Integrated Security=True;";
+            connector = "provider=Microsoft.ACE.OLEDB.12.0;data source=" + fullPath + @"\AtlasUsers.accdb";
             sql = new SQL(connector);
-            do
-            {
-                sql.Open();
-            }
+            do sql.Open();
             while (sql.db_error());
+
             int count;
             do count = sql.Exec("UPDATE Users SET Bonus=\'" + Atlas_Main.bonus + "\' WHERE ID= " + MyProfile.ID.ToString());
             while (sql.db_error());
+
             do sql.Close();
             while (sql.db_error());
             return true;
@@ -265,12 +253,11 @@ namespace ATLAS
             int index = rnd.Next(0, (questions.Count));
             label_question.Text = questions[index].ToString();
             AnswerArray = answers[index].ToString().Split('*');
-            label_photo_answ1.Text = AnswerArray[0].ToString();
-            label_photo_answ2.Text = AnswerArray[1].ToString();
-            label_photo_answ3.Text = AnswerArray[2].ToString();
-            label_photo_answ4.Text = AnswerArray[3].ToString();
+            for (int i = 0; i < fotoAnswer.Length;i++)
+                fotoAnswer[i].Text = AnswerArray[i].ToString();                
             answer = rightAnswer[index].ToString();
             Image imageTemp = Image.FromFile("FotoQuizzes\\" + pictures[index] + ".jpg");
+
             pictureBox_photo.Width = imageTemp.Width;
             pictureBox_photo.Height = imageTemp.Height;
             pictureBox_photo.Image = imageTemp;
@@ -282,10 +269,8 @@ namespace ATLAS
             int index = rnd.Next(0, (questions.Count));
             label_question.Text = questions[index].ToString();
             AnswerArray = answers[index].ToString().Split('*');
-            label_answer_1.Text = AnswerArray[0].ToString();
-            label_answer_2.Text = AnswerArray[1].ToString();
-            label_answer_3.Text = AnswerArray[2].ToString();
-            label_answer_4.Text = AnswerArray[3].ToString();
+            for (int i = 0; i < quizzesAnswer.Length; i++)
+                quizzesAnswer[i].Text = AnswerArray[i].ToString(); 
             answer = rightAnswer[index].ToString();
         }
         #endregion

@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ATLAS
 {
     class SQL
     {        
-        SqlConnection sc;
+        OleDbConnection sc;
         public string error { get; private set; } 
         public string query { get; private set; }
         string connector;
 
         public SQL(string connector)
         {
-            sc = new SqlConnection(connector);            
+            sc = new OleDbConnection(connector);            
             this.connector = connector;
         }
 
@@ -63,7 +59,7 @@ namespace ATLAS
             this.query = query;
             try
             {
-                SqlCommand cmd = sc.CreateCommand();
+                OleDbCommand cmd = sc.CreateCommand();
                 cmd.CommandText = query;
                 string scalar = cmd.ExecuteScalar().ToString();
                 return scalar;
@@ -81,7 +77,7 @@ namespace ATLAS
             this.query = query;
             try
             {
-                SqlCommand cmd = sc.CreateCommand();
+                OleDbCommand cmd = sc.CreateCommand();
                 cmd.CommandText = query;
                 int rows = cmd.ExecuteNonQuery();
                 return rows;
@@ -94,14 +90,14 @@ namespace ATLAS
         }
 
         // Select information from data base
-        public SqlDataReader Select(string query)
+        public OleDbDataReader Select(string query)
         {
             error = "";
             try
             {
-                SqlCommand cmd = sc.CreateCommand();
+                OleDbCommand cmd = sc.CreateCommand();
                 cmd.CommandText = query;
-                SqlDataReader read = cmd.ExecuteReader();
+                OleDbDataReader read = cmd.ExecuteReader();
                 return read;
             }
             catch (Exception ex)

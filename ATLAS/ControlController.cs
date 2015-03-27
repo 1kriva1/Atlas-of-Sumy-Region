@@ -11,12 +11,15 @@ using System.Windows.Forms;
 
 namespace ATLAS
 {
+    // class that allow to control visible, enabled, colors, text of different objects
     class ControlController
     {   
         Control controller;
+        CheckBox chbox;
 
         // Change visible 
         #region Visible
+
         public void VisibleOff(params object[] forms)
         {
             for (int i = 0; i < forms.Length; i++)
@@ -121,9 +124,45 @@ namespace ATLAS
                 controller.BackColor = Color.White;
             }            
         }
+
         #endregion
 
-        // Change cursor's interface
+        //Checked checkboxes
+        #region Checked
+        public void CheckOn(params object[] forms)
+        {
+            for (int i = 0; i < forms.Length; i++)
+            {
+                if (forms[i] is CheckBox)
+                {
+                    chbox = forms[i] as CheckBox;
+                    chbox.Checked = true;
+                }
+            }
+        }
+        #endregion
+
+        // Refresh objects text
+        #region Change text
+
+        public void RefreshText(params object[] forms)
+        {
+            for (int i = 0; i < forms.Length; i++)
+            {
+                if (forms[i] is Control)
+                {
+                    controller = forms[i] as Control;
+                    controller.Text = "";
+                }
+            }
+        }
+
+        #endregion
+
+        // Cursor view
+        #region Cursor view
+
+        // Change cursor's view
         public static Cursor LoadCustomCursor(string path)
         {
             IntPtr hCurs = LoadCursorFromFile(path);
@@ -136,5 +175,6 @@ namespace ATLAS
         }
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         private static extern IntPtr LoadCursorFromFile(string path);
+        #endregion
     }
 }

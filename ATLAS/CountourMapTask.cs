@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATLAS
@@ -30,35 +24,43 @@ namespace ATLAS
 
     public partial class CountourMapTask : Form
     {
-        string territory = "", thema = ""; // territory and thema for task
-        ControlController cc;
-        CounterTaskList counterList;
-        Draw draw;  
-        string fullPath; 
-        string connector; 
-        List<string> task=new List<string>(); // store task for draw on counter map
+        // territory and thema for task
+        string territory { get; set; }
+        string thema { get; set; } 
+
+        string fullPath { get; set; } 
+        string connector { get; set; } // connector string to sql
+        List<string> task; // store task for draw on counter map
         int DownX, CurrentX, DownY, CurrentY; // coordinates when mouse down and mouse move
-        bool DrawFlag = false; // false - can't draw; true - draw
+        bool DrawFlag; // false - can't draw; true - draw
         Bitmap bmp;
         Image FirstMap; // image for "Refresh"              
         Pen pen;
         SolidBrush brush;
-        DrawType drawType;      
-        SQL sql;  
-        Color color; // color for draw       
-        Stack<Image> undo = new Stack<Image>();
-        Stack<Image> redo = new Stack<Image>();
+        DrawType drawType;               
+        Color color; // color for draw
+       
+        Stack<Image> undo; // stack for undo action
+        Stack<Image> redo; // stack for redo action
+
+        ControlController cc;
+        CounterTaskList counterList;
+        Draw draw;
+        SQL sql;
 
         public CountourMapTask()
         {
             InitializeComponent();
             cc = new ControlController();
-            fullPath = Application.StartupPath.ToString() + @"\QuizzesData\CounterMap.mdf";
-            connector = @"Data Source=(LocalDB)\v11.0;AttachDbFilename="+fullPath+";Integrated Security=True;";
+            fullPath = Application.StartupPath.ToString() + @"\QuizzesData\CounterMap.accdb";
+            connector = "provider=Microsoft.ACE.OLEDB.12.0;data source=" + fullPath;
+            task = new List<string>();
             sql = new SQL(connector);
             draw = new Draw(pictureBox_map, fontDialog, numericUpDown_width);
             color = Color.Black; // default color
-            drawType = DrawType.Pen; // default drawtype   
+            drawType = DrawType.Pen; // default drawtype  
+            undo = new Stack<Image>();
+            redo = new Stack<Image>();
         }
 
         #region Settings
@@ -88,6 +90,7 @@ namespace ATLAS
             label2.Text = thema;
         }
         
+        //refresh settings
         private void button_refresh_Click(object sender, EventArgs e)
         {
             button_start.Visible = false;
@@ -106,20 +109,19 @@ namespace ATLAS
             switch (territory)
             {
                 case "Конотопський район":                    
-                    pictureBox_map.Image = Image.FromFile("CounterMaps\\Kon_counter.jpg");
+                    pictureBox_map.Image = Image.FromFile("CounterMaps\\"+ comboBox_teritory.Text +".tif");
                     FirstMap = pictureBox_map.Image;                    
                     break;
                 case "Сумський район":
-                    pictureBox_map.Image = Image.FromFile("CounterMaps\\Sum_counter.jpg");
+                    pictureBox_map.Image = Image.FromFile("CounterMaps\\" + comboBox_teritory.Text + ".tif");
                     FirstMap = pictureBox_map.Image;
                     break;
             }
             LoadTask();
             bmp = new Bitmap(pictureBox_map.Image);            
-            undo.Push(pictureBox_map.Image);            
-            pictureBox_map.Focus();
+            undo.Push(pictureBox_map.Image);           
             counterList = new CounterTaskList(territory, thema, task);
-            counterList.Show(); // show list of tasks
+            counterList.Show(); // show list of tasks            
         }
         #endregion
 
@@ -128,28 +130,21 @@ namespace ATLAS
         private void LoadTask()
         {
             task.Clear();
-            do
-            {
-                sql.Open();
-            }
+            do sql.Open();
             while (sql.db_error());
+
             string query;
             query = "SELECT Location, Thema, Objects FROM CounterMap WHERE Location = '" + territory + "'" + " AND Thema = '" + thema + "'";
-            SqlDataReader read;
-            do 
-            {
-                read = sql.Select(query);
-            }
+            OleDbDataReader read;
+            do read = sql.Select(query);
             while (sql.db_error());
 
             while (read.Read())
             {
                 task.AddRange(read["Objects"].ToString().Split('*'));                
             }
-            do
-            {
-                sql.Close();
-            } 
+
+            do sql.Close();
             while (sql.db_error());                      
         }
         #endregion
@@ -206,8 +201,7 @@ namespace ATLAS
                     case DrawType.EllipseFill: draw.DrawElipseFill(bmp, brush, DownX, DownY, CurrentX, CurrentY);                        
                         pictureBox_map.Refresh();
                         break;
-                }              
-                
+                }                             
             }            
         }
 
@@ -251,7 +245,8 @@ namespace ATLAS
                                      break;
                 case "button_fill_ellipse": drawType = DrawType.EllipseFill;
                                      break;                
-            }            
+            }
+            numericUpDown_width.Value = 1;
         }
 
         // Eraser
@@ -344,9 +339,14 @@ namespace ATLAS
                 {
                     pictureBox_map.Image = Image.FromFile(openFileDialog.FileName);
                 }
-                catch
+                catch(FileNotFoundException)
                 {
                     MessageBox.Show("Помилка при відкритті зображення!", "Контурні карти",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Помилка!", "Контурні карти",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }            
@@ -375,9 +375,14 @@ namespace ATLAS
                     MessageBox.Show("Зображення успішно збережено в папці CounterMaps!", "Контурні карти",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch
+                catch(ArgumentNullException)
                 {
                     MessageBox.Show("Помилка при збереженні зображення!", "Контурні карти",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Помилка!", "Контурні карти",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }                
@@ -401,7 +406,8 @@ namespace ATLAS
         {
             e.Graphics.DrawImage(new Bitmap(pictureBox_map.Image), new Point(0, 0)); //Countour map on print
         }
-        #endregion      
+
+        #endregion     
 
     }
 }

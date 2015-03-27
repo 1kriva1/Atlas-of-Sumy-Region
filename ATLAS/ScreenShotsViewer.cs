@@ -50,9 +50,14 @@ namespace ATLAS
                 Init();
                 pictureBox_screenshot.Image = null;
             }
-            catch (Exception)
+            catch (IOException)
             {
                 MessageBox.Show("Помилка при видаленні зображення!", "Screenshots",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка!", "Screenshots",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -61,21 +66,23 @@ namespace ATLAS
         private void listBox_screenshots_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 using(fs = new FileStream("Screenshots\\" + listBox_screenshots.SelectedItem.ToString() + ".tif", FileMode.Open))
                 {
                     pictureBox_screenshot.Image = Image.FromStream(fs);
-                }
-                
-                //pictureBox_screenshot.Image = Image.FromFile("Screenshots\\" + listBox_screenshots.SelectedItem.ToString() + ".tif");                
+                }                                              
                 button_delete.Visible = true;
             }
-            catch (Exception)
+            catch (FileNotFoundException)
             {
                 MessageBox.Show("Помилка при завантаженні зображення!", "Screenshots",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка!", "Screenshots",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
 
        

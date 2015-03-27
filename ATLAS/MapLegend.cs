@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,19 @@ namespace ATLAS
 
         public void LoadLegend(string part, string map)
         {
-            pictureBox_MapLegend.Image = Image.FromFile("MapLegends\\" + part + "\\" + map + "Legend" + ".tif");
+            try
+            {
+                pictureBox_MapLegend.Image = Image.FromFile("MapLegends\\" + part + "\\" + map + "Legend" + ".tif");
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("Дані тимчасово відсутні!", "Атлас вибачається", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void MapLegend_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Atlas_Main.ml = null;
         }
     }
 }

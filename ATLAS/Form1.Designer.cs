@@ -30,13 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Atlas_Main));
             this.button_map_right = new System.Windows.Forms.Button();
-            this.checkedListBox_map_layers = new System.Windows.Forms.CheckedListBox();
             this.panel_map_instrument = new System.Windows.Forms.Panel();
             this.button_map_down = new System.Windows.Forms.Button();
             this.trackBar_map_scale = new System.Windows.Forms.TrackBar();
             this.button_map_left = new System.Windows.Forms.Button();
             this.button_map_up = new System.Windows.Forms.Button();
             this.panel_map_maps = new System.Windows.Forms.Panel();
+            this.panel_map_layers = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button_replace = new System.Windows.Forms.Button();
             this.button_map_layers = new System.Windows.Forms.Button();
             this.comboBox_map_content = new System.Windows.Forms.ComboBox();
             this.button_map_legend = new System.Windows.Forms.Button();
@@ -133,8 +137,8 @@
             this.button_study = new System.Windows.Forms.Button();
             this.button_quizzes = new System.Windows.Forms.Button();
             this.panel_image = new System.Windows.Forms.Panel();
-            this.pictureBox_image_title_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_image_title_2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_image_title_1 = new System.Windows.Forms.PictureBox();
             this.panel_content = new System.Windows.Forms.Panel();
             this.button_map_screenshots = new System.Windows.Forms.Button();
             this.button_social = new System.Windows.Forms.Button();
@@ -206,6 +210,7 @@
             this.panel_map_instrument.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_map_scale)).BeginInit();
             this.panel_map_maps.SuspendLayout();
+            this.panel_map_layers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_map_instrument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_map_MAIN)).BeginInit();
             this.panel_study_content.SuspendLayout();
@@ -225,8 +230,8 @@
             this.panel_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_acc_bonus)).BeginInit();
             this.panel_image.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_1)).BeginInit();
             this.panel_content.SuspendLayout();
             this.panel_main.SuspendLayout();
             this.panel_study.SuspendLayout();
@@ -268,24 +273,6 @@
             this.button_map_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.button_map_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
-            // checkedListBox_map_layers
-            // 
-            this.checkedListBox_map_layers.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.checkedListBox_map_layers.CheckOnClick = true;
-            this.checkedListBox_map_layers.FormattingEnabled = true;
-            this.checkedListBox_map_layers.HorizontalScrollbar = true;
-            this.checkedListBox_map_layers.Items.AddRange(new object[] {
-            "Рельєф",
-            "Гідрографія",
-            "Транспортна мережа",
-            "Адміністративні пункти",
-            "Райони"});
-            this.checkedListBox_map_layers.Location = new System.Drawing.Point(876, 441);
-            this.checkedListBox_map_layers.Name = "checkedListBox_map_layers";
-            this.checkedListBox_map_layers.Size = new System.Drawing.Size(201, 172);
-            this.checkedListBox_map_layers.TabIndex = 61;
-            this.checkedListBox_map_layers.Visible = false;
-            // 
             // panel_map_instrument
             // 
             this.panel_map_instrument.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -295,7 +282,7 @@
             this.panel_map_instrument.Controls.Add(this.trackBar_map_scale);
             this.panel_map_instrument.Controls.Add(this.button_map_left);
             this.panel_map_instrument.Controls.Add(this.button_map_up);
-            this.panel_map_instrument.Location = new System.Drawing.Point(929, 121);
+            this.panel_map_instrument.Location = new System.Drawing.Point(921, 121);
             this.panel_map_instrument.Name = "panel_map_instrument";
             this.panel_map_instrument.Size = new System.Drawing.Size(99, 287);
             this.panel_map_instrument.TabIndex = 60;
@@ -357,7 +344,8 @@
             // 
             // panel_map_maps
             // 
-            this.panel_map_maps.Controls.Add(this.checkedListBox_map_layers);
+            this.panel_map_maps.Controls.Add(this.panel_map_layers);
+            this.panel_map_maps.Controls.Add(this.button_replace);
             this.panel_map_maps.Controls.Add(this.panel_map_instrument);
             this.panel_map_maps.Controls.Add(this.button_map_layers);
             this.panel_map_maps.Controls.Add(this.comboBox_map_content);
@@ -373,11 +361,71 @@
             this.panel_map_maps.TabIndex = 93;
             this.panel_map_maps.Visible = false;
             // 
+            // panel_map_layers
+            // 
+            this.panel_map_layers.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel_map_layers.Controls.Add(this.checkBox3);
+            this.panel_map_layers.Controls.Add(this.checkBox2);
+            this.panel_map_layers.Controls.Add(this.checkBox1);
+            this.panel_map_layers.Location = new System.Drawing.Point(786, 434);
+            this.panel_map_layers.Name = "panel_map_layers";
+            this.panel_map_layers.Size = new System.Drawing.Size(294, 100);
+            this.panel_map_layers.TabIndex = 64;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(7, 65);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(279, 27);
+            this.checkBox3.TabIndex = 65;
+            this.checkBox3.Text = "Межі районів та міст";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(7, 38);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(279, 27);
+            this.checkBox2.TabIndex = 64;
+            this.checkBox2.Text = "Транспорт та гідрографія";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(6, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(280, 32);
+            this.checkBox1.TabIndex = 63;
+            this.checkBox1.Text = "Населенні пункти";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            // 
+            // button_replace
+            // 
+            this.button_replace.BackColor = System.Drawing.Color.Yellow;
+            this.button_replace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_replace.Font = new System.Drawing.Font("Comic Sans MS", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_replace.Location = new System.Drawing.Point(182, 20);
+            this.button_replace.Name = "button_replace";
+            this.button_replace.Size = new System.Drawing.Size(128, 32);
+            this.button_replace.TabIndex = 62;
+            this.button_replace.Text = "Початкове положення";
+            this.button_replace.UseVisualStyleBackColor = false;
+            this.button_replace.Click += new System.EventHandler(this.button_replace_Click);
+            // 
             // button_map_layers
             // 
             this.button_map_layers.BackColor = System.Drawing.Color.Yellow;
             this.button_map_layers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_map_layers.Location = new System.Drawing.Point(510, 20);
+            this.button_map_layers.Location = new System.Drawing.Point(543, 20);
             this.button_map_layers.Name = "button_map_layers";
             this.button_map_layers.Size = new System.Drawing.Size(142, 32);
             this.button_map_layers.TabIndex = 58;
@@ -399,7 +447,7 @@
             // 
             this.button_map_legend.BackColor = System.Drawing.Color.Yellow;
             this.button_map_legend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_map_legend.Location = new System.Drawing.Point(664, 20);
+            this.button_map_legend.Location = new System.Drawing.Point(697, 20);
             this.button_map_legend.Name = "button_map_legend";
             this.button_map_legend.Size = new System.Drawing.Size(108, 32);
             this.button_map_legend.TabIndex = 55;
@@ -423,7 +471,7 @@
             // 
             this.button_map_hand.BackColor = System.Drawing.Color.Yellow;
             this.button_map_hand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_map_hand.Location = new System.Drawing.Point(212, 20);
+            this.button_map_hand.Location = new System.Drawing.Point(316, 20);
             this.button_map_hand.Name = "button_map_hand";
             this.button_map_hand.Size = new System.Drawing.Size(59, 32);
             this.button_map_hand.TabIndex = 53;
@@ -435,7 +483,7 @@
             // 
             this.button_map_screenshot.BackColor = System.Drawing.Color.Yellow;
             this.button_map_screenshot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_map_screenshot.Location = new System.Drawing.Point(277, 20);
+            this.button_map_screenshot.Location = new System.Drawing.Point(410, 20);
             this.button_map_screenshot.Name = "button_map_screenshot";
             this.button_map_screenshot.Size = new System.Drawing.Size(124, 32);
             this.button_map_screenshot.TabIndex = 54;
@@ -629,9 +677,10 @@
             // 
             // pictureBox_study_18
             // 
-            this.pictureBox_study_18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_18.BackgroundImage")));
+            this.pictureBox_study_18.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_18.Enabled = false;
             this.pictureBox_study_18.Location = new System.Drawing.Point(509, 601);
             this.pictureBox_study_18.Name = "pictureBox_study_18";
             this.pictureBox_study_18.Size = new System.Drawing.Size(95, 75);
@@ -669,9 +718,10 @@
             // 
             // pictureBox_study_15
             // 
-            this.pictureBox_study_15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_15.BackgroundImage")));
+            this.pictureBox_study_15.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_15.Enabled = false;
             this.pictureBox_study_15.Location = new System.Drawing.Point(509, 510);
             this.pictureBox_study_15.Name = "pictureBox_study_15";
             this.pictureBox_study_15.Size = new System.Drawing.Size(95, 75);
@@ -682,9 +732,10 @@
             // 
             // pictureBox_study_14
             // 
-            this.pictureBox_study_14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_14.BackgroundImage")));
+            this.pictureBox_study_14.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_14.Enabled = false;
             this.pictureBox_study_14.Location = new System.Drawing.Point(275, 510);
             this.pictureBox_study_14.Name = "pictureBox_study_14";
             this.pictureBox_study_14.Size = new System.Drawing.Size(95, 75);
@@ -695,9 +746,10 @@
             // 
             // pictureBox_study_13
             // 
-            this.pictureBox_study_13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_13.BackgroundImage")));
+            this.pictureBox_study_13.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_13.Enabled = false;
             this.pictureBox_study_13.Location = new System.Drawing.Point(32, 510);
             this.pictureBox_study_13.Name = "pictureBox_study_13";
             this.pictureBox_study_13.Size = new System.Drawing.Size(95, 75);
@@ -726,9 +778,10 @@
             // 
             // pictureBox_study_17
             // 
-            this.pictureBox_study_17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_17.BackgroundImage")));
+            this.pictureBox_study_17.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_17.Enabled = false;
             this.pictureBox_study_17.Location = new System.Drawing.Point(275, 601);
             this.pictureBox_study_17.Name = "pictureBox_study_17";
             this.pictureBox_study_17.Size = new System.Drawing.Size(95, 75);
@@ -739,9 +792,10 @@
             // 
             // pictureBox_study_16
             // 
-            this.pictureBox_study_16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_16.BackgroundImage")));
+            this.pictureBox_study_16.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_16.Enabled = false;
             this.pictureBox_study_16.Location = new System.Drawing.Point(32, 601);
             this.pictureBox_study_16.Name = "pictureBox_study_16";
             this.pictureBox_study_16.Size = new System.Drawing.Size(95, 75);
@@ -761,9 +815,10 @@
             // 
             // pictureBox_study_12
             // 
-            this.pictureBox_study_12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_12.BackgroundImage")));
+            this.pictureBox_study_12.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_12.Enabled = false;
             this.pictureBox_study_12.Location = new System.Drawing.Point(509, 414);
             this.pictureBox_study_12.Name = "pictureBox_study_12";
             this.pictureBox_study_12.Size = new System.Drawing.Size(95, 75);
@@ -792,7 +847,7 @@
             this.label_title_2.TabIndex = 81;
             this.label_title_2.Text = "Шосткинський район";
             this.label_title_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_2.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_2.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -807,7 +862,7 @@
             this.label_title_3.TabIndex = 82;
             this.label_title_3.Text = "Кролевецький район";
             this.label_title_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_3.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_3.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -822,7 +877,7 @@
             this.label_title_4.TabIndex = 83;
             this.label_title_4.Text = "Конотопський район";
             this.label_title_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_4.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_4.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -837,7 +892,7 @@
             this.label_title_18.TabIndex = 97;
             this.label_title_18.Text = "Ямпільський район";
             this.label_title_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_18.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_18.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -852,7 +907,7 @@
             this.label_title_5.TabIndex = 96;
             this.label_title_5.Text = "Буринський район";
             this.label_title_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_5.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_5.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -867,7 +922,7 @@
             this.label_title_7.TabIndex = 95;
             this.label_title_7.Text = "Недригайлівський район";
             this.label_title_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_7.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_7.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -882,7 +937,7 @@
             this.label_title_13.TabIndex = 94;
             this.label_title_13.Text = "Краснопільський район";
             this.label_title_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_13.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_13.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -897,7 +952,7 @@
             this.label_title_14.TabIndex = 93;
             this.label_title_14.Text = "Сумський район";
             this.label_title_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_14.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_14.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -912,7 +967,7 @@
             this.label_title_15.TabIndex = 92;
             this.label_title_15.Text = "Білопільський район";
             this.label_title_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_15.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_15.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -927,7 +982,7 @@
             this.label_title_16.TabIndex = 91;
             this.label_title_16.Text = "Путивльський район";
             this.label_title_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_16.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_16.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -942,7 +997,7 @@
             this.label_title_17.TabIndex = 90;
             this.label_title_17.Text = "Глухівський район";
             this.label_title_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_17.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_17.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -957,7 +1012,7 @@
             this.label_title_12.TabIndex = 89;
             this.label_title_12.Text = "Тростянецький район";
             this.label_title_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_12.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_12.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -972,7 +1027,7 @@
             this.label_title_11.TabIndex = 88;
             this.label_title_11.Text = "Великописарівський район";
             this.label_title_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_11.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_11.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -987,7 +1042,7 @@
             this.label_title_10.TabIndex = 87;
             this.label_title_10.Text = "Охтирський район";
             this.label_title_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_10.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_10.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -1002,7 +1057,7 @@
             this.label_title_9.TabIndex = 86;
             this.label_title_9.Text = "Лебединський район";
             this.label_title_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_9.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_9.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -1017,7 +1072,7 @@
             this.label_title_8.TabIndex = 85;
             this.label_title_8.Text = "Липоводолинський район";
             this.label_title_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_8.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_8.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -1032,7 +1087,7 @@
             this.label_title_6.TabIndex = 84;
             this.label_title_6.Text = "Роменський район";
             this.label_title_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_6.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_6.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -1047,7 +1102,7 @@
             this.label_title_1.TabIndex = 80;
             this.label_title_1.Text = "Середино-Будський район";
             this.label_title_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_title_1.Click += new System.EventHandler(this.label_title_1_Click);
+            this.label_title_1.Click += new System.EventHandler(this.label_title_Click);
             this.label_title_1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseDown);
             this.label_title_1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_map_up_MouseUp);
             // 
@@ -1107,9 +1162,10 @@
             // 
             // pictureBox_study_11
             // 
-            this.pictureBox_study_11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_11.BackgroundImage")));
+            this.pictureBox_study_11.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_11.Enabled = false;
             this.pictureBox_study_11.Location = new System.Drawing.Point(275, 414);
             this.pictureBox_study_11.Name = "pictureBox_study_11";
             this.pictureBox_study_11.Size = new System.Drawing.Size(95, 75);
@@ -1547,21 +1603,8 @@
             this.panel_image.Controls.Add(this.pictureBox_image_title_2);
             this.panel_image.Location = new System.Drawing.Point(329, 0);
             this.panel_image.Name = "panel_image";
-            this.panel_image.Size = new System.Drawing.Size(756, 220);
+            this.panel_image.Size = new System.Drawing.Size(756, 221);
             this.panel_image.TabIndex = 81;
-            // 
-            // pictureBox_image_title_1
-            // 
-            this.pictureBox_image_title_1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_image_title_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_image_title_1.BackgroundImage")));
-            this.pictureBox_image_title_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_image_title_1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_image_title_1.Name = "pictureBox_image_title_1";
-            this.pictureBox_image_title_1.Size = new System.Drawing.Size(367, 220);
-            this.pictureBox_image_title_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_image_title_1.TabIndex = 6;
-            this.pictureBox_image_title_1.TabStop = false;
             // 
             // pictureBox_image_title_2
             // 
@@ -1571,10 +1614,23 @@
             this.pictureBox_image_title_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_image_title_2.Location = new System.Drawing.Point(367, 0);
             this.pictureBox_image_title_2.Name = "pictureBox_image_title_2";
-            this.pictureBox_image_title_2.Size = new System.Drawing.Size(387, 220);
+            this.pictureBox_image_title_2.Size = new System.Drawing.Size(389, 221);
             this.pictureBox_image_title_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_image_title_2.TabIndex = 7;
             this.pictureBox_image_title_2.TabStop = false;
+            // 
+            // pictureBox_image_title_1
+            // 
+            this.pictureBox_image_title_1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_image_title_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_image_title_1.BackgroundImage")));
+            this.pictureBox_image_title_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_image_title_1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_image_title_1.Name = "pictureBox_image_title_1";
+            this.pictureBox_image_title_1.Size = new System.Drawing.Size(369, 221);
+            this.pictureBox_image_title_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_image_title_1.TabIndex = 6;
+            this.pictureBox_image_title_1.TabStop = false;
             // 
             // panel_content
             // 
@@ -1668,6 +1724,7 @@
             // 
             // button_economic
             // 
+            this.button_economic.Enabled = false;
             this.button_economic.Location = new System.Drawing.Point(55, 67);
             this.button_economic.Margin = new System.Windows.Forms.Padding(5);
             this.button_economic.Name = "button_economic";
@@ -1813,9 +1870,10 @@
             // 
             // pictureBox_study_10
             // 
-            this.pictureBox_study_10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_10.BackgroundImage")));
+            this.pictureBox_study_10.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_10.Enabled = false;
             this.pictureBox_study_10.Location = new System.Drawing.Point(32, 414);
             this.pictureBox_study_10.Name = "pictureBox_study_10";
             this.pictureBox_study_10.Size = new System.Drawing.Size(95, 75);
@@ -1835,9 +1893,10 @@
             // 
             // pictureBox_study_9
             // 
-            this.pictureBox_study_9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_9.BackgroundImage")));
+            this.pictureBox_study_9.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_9.Enabled = false;
             this.pictureBox_study_9.Location = new System.Drawing.Point(509, 317);
             this.pictureBox_study_9.Name = "pictureBox_study_9";
             this.pictureBox_study_9.Size = new System.Drawing.Size(95, 75);
@@ -1848,9 +1907,10 @@
             // 
             // pictureBox_study_8
             // 
-            this.pictureBox_study_8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_8.BackgroundImage")));
+            this.pictureBox_study_8.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_8.Enabled = false;
             this.pictureBox_study_8.Location = new System.Drawing.Point(275, 317);
             this.pictureBox_study_8.Name = "pictureBox_study_8";
             this.pictureBox_study_8.Size = new System.Drawing.Size(95, 75);
@@ -1861,9 +1921,10 @@
             // 
             // pictureBox_study_7
             // 
-            this.pictureBox_study_7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_7.BackgroundImage")));
+            this.pictureBox_study_7.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_7.Enabled = false;
             this.pictureBox_study_7.Location = new System.Drawing.Point(32, 317);
             this.pictureBox_study_7.Name = "pictureBox_study_7";
             this.pictureBox_study_7.Size = new System.Drawing.Size(95, 75);
@@ -1874,9 +1935,10 @@
             // 
             // pictureBox_study_6
             // 
-            this.pictureBox_study_6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_6.BackgroundImage")));
+            this.pictureBox_study_6.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_6.Enabled = false;
             this.pictureBox_study_6.Location = new System.Drawing.Point(507, 224);
             this.pictureBox_study_6.Name = "pictureBox_study_6";
             this.pictureBox_study_6.Size = new System.Drawing.Size(95, 75);
@@ -1887,9 +1949,10 @@
             // 
             // pictureBox_study_5
             // 
-            this.pictureBox_study_5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_5.BackgroundImage")));
+            this.pictureBox_study_5.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_5.Enabled = false;
             this.pictureBox_study_5.Location = new System.Drawing.Point(275, 224);
             this.pictureBox_study_5.Name = "pictureBox_study_5";
             this.pictureBox_study_5.Size = new System.Drawing.Size(95, 75);
@@ -1900,9 +1963,10 @@
             // 
             // pictureBox_study_4
             // 
-            this.pictureBox_study_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_4.BackgroundImage")));
+            this.pictureBox_study_4.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_4.Enabled = false;
             this.pictureBox_study_4.Location = new System.Drawing.Point(32, 224);
             this.pictureBox_study_4.Name = "pictureBox_study_4";
             this.pictureBox_study_4.Size = new System.Drawing.Size(95, 75);
@@ -1950,9 +2014,10 @@
             // 
             // pictureBox_study_3
             // 
-            this.pictureBox_study_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_3.BackgroundImage")));
+            this.pictureBox_study_3.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_3.Enabled = false;
             this.pictureBox_study_3.Location = new System.Drawing.Point(509, 134);
             this.pictureBox_study_3.Name = "pictureBox_study_3";
             this.pictureBox_study_3.Size = new System.Drawing.Size(95, 75);
@@ -1963,9 +2028,10 @@
             // 
             // pictureBox_study_2
             // 
-            this.pictureBox_study_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_study_2.BackgroundImage")));
+            this.pictureBox_study_2.BackColor = System.Drawing.Color.Cornsilk;
             this.pictureBox_study_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_study_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_study_2.Enabled = false;
             this.pictureBox_study_2.Location = new System.Drawing.Point(275, 134);
             this.pictureBox_study_2.Name = "pictureBox_study_2";
             this.pictureBox_study_2.Size = new System.Drawing.Size(95, 75);
@@ -2084,39 +2150,39 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Location = new System.Drawing.Point(623, 508);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(20, 19);
+            this.label23.Size = new System.Drawing.Size(25, 19);
             this.label23.TabIndex = 30;
-            this.label23.Text = "#";
+            this.label23.Text = "50";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Location = new System.Drawing.Point(374, 563);
+            this.label22.Location = new System.Drawing.Point(311, 558);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(20, 19);
+            this.label22.Size = new System.Drawing.Size(159, 19);
             this.label22.TabIndex = 29;
-            this.label22.Text = "#";
+            this.label22.Text = "Тимчасово недоступно";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Location = new System.Drawing.Point(78, 484);
+            this.label21.Location = new System.Drawing.Point(10, 480);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(20, 19);
+            this.label21.Size = new System.Drawing.Size(159, 19);
             this.label21.TabIndex = 28;
-            this.label21.Text = "#";
+            this.label21.Text = "Тимчасово недоступно";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Location = new System.Drawing.Point(622, 313);
+            this.label20.Location = new System.Drawing.Point(569, 313);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(20, 19);
+            this.label20.Size = new System.Drawing.Size(159, 19);
             this.label20.TabIndex = 27;
-            this.label20.Text = "#";
+            this.label20.Text = "Тимчасово недоступно";
             // 
             // label19
             // 
@@ -2124,9 +2190,9 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Location = new System.Drawing.Point(373, 365);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(20, 19);
+            this.label19.Size = new System.Drawing.Size(25, 19);
             this.label19.TabIndex = 26;
-            this.label19.Text = "#";
+            this.label19.Text = "35";
             // 
             // label18
             // 
@@ -2134,49 +2200,49 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Location = new System.Drawing.Point(106, 286);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(20, 19);
+            this.label18.Size = new System.Drawing.Size(25, 19);
             this.label18.TabIndex = 25;
-            this.label18.Text = "#";
+            this.label18.Text = "25";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Location = new System.Drawing.Point(614, 111);
+            this.label17.Location = new System.Drawing.Point(568, 112);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(20, 19);
+            this.label17.Size = new System.Drawing.Size(159, 19);
             this.label17.TabIndex = 24;
-            this.label17.Text = "#";
+            this.label17.Text = "Тимчасово недоступно";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Location = new System.Drawing.Point(420, 152);
+            this.label16.Location = new System.Drawing.Point(430, 152);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(20, 19);
+            this.label16.Size = new System.Drawing.Size(25, 19);
             this.label16.TabIndex = 23;
-            this.label16.Text = "#";
+            this.label16.Text = "15";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(227, 132);
+            this.label15.Location = new System.Drawing.Point(236, 132);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(20, 19);
+            this.label15.Size = new System.Drawing.Size(17, 19);
             this.label15.TabIndex = 22;
-            this.label15.Text = "#";
+            this.label15.Text = "5";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(62, 73);
+            this.label14.Location = new System.Drawing.Point(82, 73);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 19);
+            this.label14.Size = new System.Drawing.Size(17, 19);
             this.label14.TabIndex = 21;
-            this.label14.Text = "#";
+            this.label14.Text = "0";
             // 
             // label_SpaceShooter
             // 
@@ -2295,6 +2361,7 @@
             this.pictureBox_SpaceShooter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_SpaceShooter.BackgroundImage")));
             this.pictureBox_SpaceShooter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_SpaceShooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_SpaceShooter.Enabled = false;
             this.pictureBox_SpaceShooter.Location = new System.Drawing.Point(315, 588);
             this.pictureBox_SpaceShooter.Name = "pictureBox_SpaceShooter";
             this.pictureBox_SpaceShooter.Size = new System.Drawing.Size(135, 80);
@@ -2307,6 +2374,7 @@
             this.pictureBox_FlyFighter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FlyFighter.BackgroundImage")));
             this.pictureBox_FlyFighter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_FlyFighter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_FlyFighter.Enabled = false;
             this.pictureBox_FlyFighter.Location = new System.Drawing.Point(37, 512);
             this.pictureBox_FlyFighter.Name = "pictureBox_FlyFighter";
             this.pictureBox_FlyFighter.Size = new System.Drawing.Size(100, 80);
@@ -2355,6 +2423,7 @@
             this.pictureBox_PictureCards.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_PictureCards.BackgroundImage")));
             this.pictureBox_PictureCards.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_PictureCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_PictureCards.Enabled = false;
             this.pictureBox_PictureCards.Location = new System.Drawing.Point(591, 340);
             this.pictureBox_PictureCards.Name = "pictureBox_PictureCards";
             this.pictureBox_PictureCards.Size = new System.Drawing.Size(100, 80);
@@ -2367,6 +2436,7 @@
             this.pictureBox_MindCount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_MindCount.BackgroundImage")));
             this.pictureBox_MindCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_MindCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_MindCount.Enabled = false;
             this.pictureBox_MindCount.Location = new System.Drawing.Point(584, 141);
             this.pictureBox_MindCount.Name = "pictureBox_MindCount";
             this.pictureBox_MindCount.Size = new System.Drawing.Size(100, 80);
@@ -2414,18 +2484,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 762);
-            this.Controls.Add(this.panel_games);
-            this.Controls.Add(this.panel_title_map);
-            this.Controls.Add(this.panel_map_maps);
             this.Controls.Add(this.panel_image);
             this.Controls.Add(this.pictureBox_title_image);
             this.Controls.Add(this.panel_additional);
-            this.Controls.Add(this.panel_main);
-            this.Controls.Add(this.panel_study_content);
             this.Controls.Add(this.panel_content);
-            this.Controls.Add(this.panel_study);
+            this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.panel_games);
             this.Controls.Add(this.pictureBox_study);
             this.Controls.Add(this.panel_profile);
+            this.Controls.Add(this.panel_study_content);
+            this.Controls.Add(this.panel_map_maps);
+            this.Controls.Add(this.panel_title_map);
+            this.Controls.Add(this.panel_study);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2440,6 +2510,7 @@
             this.panel_map_instrument.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_map_scale)).EndInit();
             this.panel_map_maps.ResumeLayout(false);
+            this.panel_map_layers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_map_instrument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_map_MAIN)).EndInit();
             this.panel_study_content.ResumeLayout(false);
@@ -2460,8 +2531,8 @@
             this.panel_profile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_acc_bonus)).EndInit();
             this.panel_image.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_image_title_1)).EndInit();
             this.panel_content.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
             this.panel_study.ResumeLayout(false);
@@ -2496,7 +2567,6 @@
         #endregion
 
         private System.Windows.Forms.Button button_map_right;
-        private System.Windows.Forms.CheckedListBox checkedListBox_map_layers;
         private System.Windows.Forms.Panel panel_map_instrument;
         private System.Windows.Forms.Button button_map_down;
         private System.Windows.Forms.TrackBar trackBar_map_scale;
@@ -2669,6 +2739,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button_game_back;
+        private System.Windows.Forms.Button button_replace;
+        private System.Windows.Forms.Panel panel_map_layers;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
 
     }
 }

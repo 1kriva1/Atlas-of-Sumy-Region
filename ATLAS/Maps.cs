@@ -42,45 +42,67 @@ namespace ATLAS
         {
             maps.Clear();
             try
-            {
-                DirectoryInfo di = new DirectoryInfo("Maps\\" + map + "\\");
-                FileInfo[] info = di.GetFiles("*.tif", SearchOption.TopDirectoryOnly);
-                foreach (FileInfo file in info)
+            {                
+                DirectoryInfo[] dimass = new DirectoryInfo("Maps\\" + map + "\\").GetDirectories();                
+                foreach (DirectoryInfo file in dimass)
                 {
-                    string fullname = file.FullName;
-                    string name = file.Name.Replace(".tif", "");
-                    maps.Add(name);
-                }
+                    maps.Add(file.Name);                    
+                }                              
                 return maps;
             }
-            catch
+            catch(DirectoryNotFoundException)
             {
                 MessageBox.Show("Дані тимчасово відсутні!", "Атлас вибачається",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
-            }           
+            } 
+            catch(Exception)
+            {
+                MessageBox.Show("Помилка!", "Атлас вибачається",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }  
+        }
+
+        // Load names of maps layers
+        public string [] LoadLayersText(string map, string path)
+        {
+            DirectoryInfo di = new DirectoryInfo("Maps\\" + path + "\\" + map);
+            FileInfo[] files = di.GetFiles("*.txt", SearchOption.TopDirectoryOnly);            
+            StreamReader sr = new StreamReader(files[0].FullName,Encoding.Default);
+            string [] LayersText=new string[3];
+            for(int i=0;i<3;i++)            
+                LayersText[i] = sr.ReadLine();
+            sr.Close();
+            return LayersText;            
         }
 
         // Load map in first time, when selected index change in comboBox_map_content
-        public void DrawMap(string map, string path, Image image) 
+        public void DrawMap(string map, string path, string layer, Image image) 
         {
             this.image = image;
             try
             {
-                bmp = new Bitmap("Maps\\" + path + "\\" + map + ".tif");
+                bmp = new Bitmap("Maps\\" + path + "\\" + map + "\\" + layer + ".tif");
                 using (Graphics gr = Graphics.FromImage(image))
                 {
                     gr.DrawImage(Image.FromFile("wooden-table-background.jpg"), 0, 0,
                         image.Width, image.Height); // background for map("Table for map")
-                    gr.DrawImage(bmp, x0, y0, bmp.Width * scale, bmp.Height * scale);
+                    gr.DrawImage(bmp, x0, y0, bmp.Width * scale, bmp.Height * scale);                    
                 }
             }
-            catch
+            catch(FileNotFoundException)
             {
                 MessageBox.Show("Помилка при візуалізації даних!", "Атлас вибачається",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }   
+            } 
+            catch(Exception)
+            {
+                MessageBox.Show("Помилка!", "Атлас вибачається",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            } 
         }       
 
         // Override method for Maps.cs
@@ -94,11 +116,18 @@ namespace ATLAS
                     gr.DrawImage(bmp, x0, y0, bmp.Width * scale, bmp.Height * scale);
                 }                
             }
-            catch
+            catch (ArgumentNullException)
             {
-                MessageBox.Show("Дані тимчасово відсутні!", "Атлас вибачається",
+                MessageBox.Show("Помилка при візуалізації даних!", "Атлас вибачається",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }                    
+                return;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Помилка!", "Атлас вибачається",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }                   
         }
 
         public void DownMouse(object sender, MouseEventArgs e)
@@ -236,17 +265,20 @@ namespace ATLAS
                     {
                         if (bmp != null)
                         {
-                            Bitmap temp = (Bitmap)image;
-                            //bmp.Clone(new Rectangle(Math.Abs((int)x0), Math.Abs((int)y0), 1086, 698),
-                            //    PixelFormat.Format32bppPArgb);                                                                                
+                            Bitmap temp = (Bitmap)image;                                                                                                            
                             temp.Save(sfd.FileName);
                             MessageBox.Show("Зображення успішно збережено в папці Screenshots!", "Screenshots",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }  
                     }
-                    catch
+                    catch(ArgumentNullException)
                     {
                         MessageBox.Show("Помилка при збереженні зображення!", "Screenshots",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Помилка!", "Screenshots",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
