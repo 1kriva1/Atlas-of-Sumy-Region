@@ -11,9 +11,11 @@ In developing the atlas were used following technologies:
 •	MS Access 2013
 
 At creation maps was used GIS-technology – ArcGIS 10.1.
+
 Cartographic and information base aren’t fully filled. Available maps and educational material can provide and represent the functionality of the atlas. 
 
 The structure of the atlas is:
+
 1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account).
 Functions:
 
