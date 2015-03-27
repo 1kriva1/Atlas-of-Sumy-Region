@@ -1,25 +1,22 @@
 # Atlas-of-Sumy-Region
-Project name – Interactive atlas of Sumy region (Ukraine).  
-	Atlas is designed to use by pupils of 6-7 classes to the lesson “My native land”. Peculiarity of this atlas is its motivational component – to access the game room of atlas, users must reach a certain level of knowledge on materials of atlas.  
+	Project name – Interactive atlas of Sumy region (Ukraine).  
+		Atlas is designed to use by pupils of 6-7 classes to the lesson “My native land”. Peculiarity of this atlas is its motivational component – to access the game room of atlas, users must reach a certain level of knowledge on materials of atlas.  
 	In developing the atlas were used following technologies: 
+	•	C# (.Net Framework 4.5) 
+	•	Microsoft Visual Studio 2013
+	•	MS Access 2013 
 
-•	C# (.Net Framework 4.5) 
-
-•	Microsoft Visual Studio 2013
-
-•	MS Access 2013 
-
-At creation maps was used GIS-technology – ArcGIS 10.1. 
+		At creation maps was used GIS-technology – ArcGIS 10.1. 
 	Cartographic and information base aren’t fully filled. Available maps and educational material can provide and  represent the functionality of the atlas.   
-The structure of the atlas is: 
 
-	1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account). 
-Functions: 
-•	The possibility of registration profile 
-•	Sign in (login) 
-•	The ability to edit profile 
-•	Exit from profile 
-No account login, can't open Games and Quizzes.  
+	The structure of the atlas is:
+		1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account). 
+	Functions: 
+	•	The possibility of registration profile 
+	•	Sign in (login) 
+	•	The ability to edit profile 
+	•	Exit from profile 
+	No account login, can't open Games and Quizzes.  
 
 	2) Educational information. Represent theoretical information about each district of Sumy region on the following topics:
 	•	General information 
