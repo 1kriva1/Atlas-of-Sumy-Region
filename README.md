@@ -13,6 +13,7 @@ At creation maps was used GIS-technology – ArcGIS 10.1.
 
 	Cartographic and information base aren’t fully filled. Available maps and educational material can provide and represent the functionality of the atlas.   
 The structure of the atlas is: 
+
 	1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account). 
 Functions: 
 •	The possibility of registration profile 
@@ -22,13 +23,13 @@ Functions:
 No account login, can't open Games and Quizzes.  
 
 	2) Educational information. Represent theoretical information about each district of Sumy region on the following topics:
-		General information 
-		Geography 
-		Nature 
-		History 
-		Administrative and territorial structure 
-		Famous people 
-		Cultural heritage 
+	•	General information 
+	•	Geography 
+	•	Nature 
+	•	History 
+	•	Administrative and territorial structure 
+	•	Famous people 
+	•	Cultural heritage 
 	The front page of the atlas provides a brief statistical information for each district of Sumy region.
 	
 	3) Maps. This chapter of the atlas is the main, in accordance to classical cartographical functionality of atlases. Gives possibility to view maps of atlas. 
