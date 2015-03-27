@@ -17,6 +17,7 @@ Cartographic and information base aren’t fully filled. Available maps and educ
 The structure of the atlas is:
 
 1) My profile. For the full access to the capabilities of the atlas should have it’s own profile (account).
+
 Functions:
 
 •	The possibility of registration profile
@@ -48,6 +49,7 @@ No account login, can't open Games and Quizzes.
 The front page of the atlas provides a brief statistical information for each district of Sumy region.
 
 3) Maps. This chapter of the atlas is the main, in accordance to classical cartographical functionality of atlases. Gives possibility to view maps of atlas.
+
 Functions:
 
 •	Zoom(using by mouse wheel or by scale track bar)
@@ -76,6 +78,7 @@ For a number of consecutive correct answers user gets bonuses and they store in 
 
 5) Contour maps. This part of the atlas allows user to fix educational materials by performing tasks on contour maps.
 First, user must select the area and theme that determine which objects should mark.  Then user starts performing a task.
+
 Functions:
 
 •	Drawing tools: pencil, line, ellipse, rectangle, ellipse and rectangle filled, insert text, eraser
@@ -95,6 +98,7 @@ Functions:
 •	Loading contour map; saving contour map; print contour map
 
 6) Games. Contains a set of games. Each game has it’s price. The game opens when profile has enough bonuses.
+
 List of games in atlas:
 
 1.	Stone Paper Scissors
